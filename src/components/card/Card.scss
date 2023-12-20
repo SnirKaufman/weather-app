@@ -1,0 +1,27 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.card {
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 50rem;
+  margin: 0 2rem;
+  padding: 2rem;
+  width: 100%;
+  background-color: hsla(0, 2%, 25%, 0.49);
+  border-radius: 4%;
+  font-size: 2rem;
+}
+
+.modal-temp-icon {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
