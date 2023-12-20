@@ -9,8 +9,15 @@
 
 .app {
   min-height: 100vh;
-  background-image: url("./public/blue\ background.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+#light {
+  background-image: url("./public/lightmode.jpg");
+}
+
+#dark {
+  background-image: url("./public/darkmode.jpg");
 }

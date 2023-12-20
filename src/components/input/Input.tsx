@@ -3,7 +3,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { cities } from "../../utils/CitiesArray";
 import "./input.scss";
 import { useContext } from "react";
-import { WeatherContext } from "../../context/context";
+import { WeatherContext } from "../../context/WeatherContext";
 
 function Input() {
   const { changeChosenCity } = useContext(WeatherContext);

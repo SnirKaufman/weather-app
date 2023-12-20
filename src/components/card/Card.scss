@@ -16,12 +16,18 @@
   width: 100%;
   background-color: hsla(0, 2%, 25%, 0.49);
   border-radius: 4%;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
-.modal-temp-icon {
+.card-temp-icon {
   display: flex;
   align-items: center;
   font-size: 3rem;
   font-weight: bold;
+}
+
+.card-feels_like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

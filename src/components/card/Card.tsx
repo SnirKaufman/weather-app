@@ -28,11 +28,11 @@ function Card() {
           {name} , {country}
         </h2>
 
-        <div className="modal-temp-icon">
+        <div className="card-temp-icon">
           <span className="card-temp">{Math.round(temp)}°</span>
           <img src={iconsUrl} />
         </div>
-        <div>
+        <div className="card-feels_like">
           <p>Feels Like : {feels_like}°</p>
           <br />
           <p>Wind Speed: {windSpeed} mph</p>
