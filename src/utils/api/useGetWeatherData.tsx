@@ -6,7 +6,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 export function useGetWeatherData() {
   const { chosenCity } = useContext(WeatherContext);
 
-  const weatherQuery = useQuery({
+  const cityCordinats = useQuery({
     queryKey: ["weather", chosenCity],
     queryFn: ({ queryKey: [, chosenCity] }) => {
       return axiosInstance
@@ -14,9 +14,23 @@ export function useGetWeatherData() {
           `/data/2.5/weather?q=${chosenCity}
           `
         )
-        .then((res) => res.data);
+        .then(({ data }) => data);
     },
   });
 
-  return weatherQuery;
+  const { data } = cityCordinats;
+
+  const weatherData = useQuery({
+    queryKey: ["weeklyWeather"],
+    queryFn: () => {
+      return axiosInstance
+        .get(
+          `/data/3.0/onecall?lat=${data?.coord?.lat}&lon=${data?.coord?.lon}`
+        )
+        .then(({ data }) => data);
+    },
+    enabled: !!data?.coord?.lon && !!data?.coord?.lat,
+  });
+
+  return weatherData;
 }

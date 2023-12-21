@@ -1,41 +1,21 @@
-import { useGetWeatherData } from "../../utils/api/useGetWeatherData";
 import "./Card.scss";
 
-function Card() {
-  const { data } = useGetWeatherData();
-  //make a loader and an error component and render them based of the state from the api get request
-  console.log(data);
-  if (!data) return;
-  const {
-    sys: { country },
-    name,
-    dt: dataTime,
-    timezone,
-    main,
-    weather,
-    wind,
-  } = data;
-  const { temp, feels_like } = main;
-  const [{ icon }] = weather;
-  const { speed: windSpeed } = wind;
-  console.log(data);
-  const iconsUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+function Card({ cardData }: any) {
+  console.log(cardData);
 
   return (
     <div className="card-container">
       <div className="card">
-        <h2>
-          {name} , {country}
-        </h2>
+        <h2>{/* {name} , {country} */}</h2>
 
         <div className="card-temp-icon">
-          <span className="card-temp">{Math.round(temp)}°</span>
-          <img src={iconsUrl} />
+          <span className="card-temp">{"Math.round(temp)"}°</span>
+          {/* <img /> */}
         </div>
         <div className="card-feels_like">
-          <p>Feels Like : {feels_like}°</p>
+          <p>Feels Like : {"Math.round(feels_like)"}°</p>
           <br />
-          <p>Wind Speed: {windSpeed} mph</p>
+          <p>Wind Speed: {"Math.round(windSpeed)"} mph</p>
         </div>
       </div>
     </div>
