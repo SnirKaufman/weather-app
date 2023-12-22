@@ -11,12 +11,11 @@ function MainInfo() {
   if (isError) return <h1>Error</h1>;
 
   const { data = {} } = weatherData;
-  const { current, daily } = data;
 
   return (
     <>
-      <Card cardData={current} />
-      <Forcast forcastData={daily} />
+      <Card cardData={data} />
+      <Forcast forcastData={data} />
     </>
   );
 }

@@ -8,7 +8,7 @@ const initialValue = {
 export const WeatherContext = createContext(initialValue);
 
 export function WeatherContextProvider({ children }: { children: ReactNode }) {
-  const [chosenCity, setChosenCity] = useState("tel aviv");
+  const [chosenCity, setChosenCity] = useState("Tel Aviv");
 
   const changeChosenCity = (city: string) => {
     setChosenCity(city);
