@@ -7,6 +7,8 @@ import { WeatherContext } from "../../context/WeatherContext";
 
 function Input() {
   const { changeChosenCity } = useContext(WeatherContext);
+  console.log("dasds");
+
   return (
     <div className="main_info-container">
       <Autocomplete

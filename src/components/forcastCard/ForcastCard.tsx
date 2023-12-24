@@ -1,6 +1,6 @@
-function ForcastCard() {
+function ForcastCard({ dayData, onClick }: any) {
   return (
-    <li>
+    <li onClick={onClick}>
       <h3>Friday</h3>
       <p>22 Dec</p>
       <div>

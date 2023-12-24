@@ -4,18 +4,15 @@ import Forcast from "../forcast/Forcast";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function MainInfo() {
-  const weatherData = useGetWeatherData();
-  const { isLoading, isError } = weatherData;
+  const { isLoading, isError } = useGetWeatherData();
 
   if (isLoading) return <CircularProgress />;
   if (isError) return <h1>Error</h1>;
 
-  const { data = {} } = weatherData;
-
   return (
     <>
-      <Card cardData={data} />
-      <Forcast forcastData={data} />
+      <Card />
+      <Forcast />
     </>
   );
 }
