@@ -6,18 +6,21 @@ import { useContext } from "react";
 function Forcast() {
   const { weeklyWeather, changeCurrentWeatherIndex } =
     useContext(WeatherContext);
-  console.log(weeklyWeather);
+
   return (
     <ul className="forcast-container">
-      {weeklyWeather.map((dayData, index) => {
-        return (
-          <ForcastCard
-            onClick={() => changeCurrentWeatherIndex(index)}
-            key={index}
-            dayData={dayData}
-          />
-        );
-      })}
+      <div className="forcast-list-container">
+        {weeklyWeather.map((dayData, index) => {
+          return (
+            <ForcastCard
+              index={index}
+              onClick={() => changeCurrentWeatherIndex(index)}
+              key={index}
+              dayData={dayData}
+            />
+          );
+        })}
+      </div>
     </ul>
   );
 }

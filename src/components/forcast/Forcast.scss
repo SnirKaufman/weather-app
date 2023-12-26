@@ -4,8 +4,9 @@
   align-items: center;
   justify-content: center;
 }
-
-.forcast-card {
-  width: 100%;
-  border: 1px solid black;
+.forcast-list-container {
+  width: 70rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

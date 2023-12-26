@@ -1,0 +1,18 @@
+.forcast-card-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.forcast-card-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#selected-forcast {
+  background-color: hsla(0, 2%, 25%, 0.49);
+  border-radius: 10px;
+}
