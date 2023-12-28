@@ -1,7 +1,7 @@
 import "./App.scss";
 import Header from "./components/header/Header";
 import Input from "./components/input/Input";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import MainInfo from "./components/mainInfo/MainInfo";
 
