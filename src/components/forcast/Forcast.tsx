@@ -30,9 +30,9 @@ export default function Forcast() {
           modules={[Pagination]}
           className="mySwiper"
         >
-          {weeklyWeather.map((dayData, index) => {
+          {weeklyWeather.map((dayData: any, index: number) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <ForcastCard
                   index={index}
                   onClick={() => changeCurrentWeatherIndex(index)}

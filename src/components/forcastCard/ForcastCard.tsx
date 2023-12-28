@@ -11,7 +11,6 @@ function ForcastCard({ dayData, onClick, index }: any) {
   const { day: dayTemp } = temp;
   const { weather } = dayData;
   const [{ icon }] = weather;
-  console.log(index);
 
   const iconsUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 

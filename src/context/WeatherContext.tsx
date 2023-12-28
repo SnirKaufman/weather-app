@@ -1,10 +1,19 @@
 import { ReactNode, createContext, useState } from "react";
 
-const initialValue = {
+type initialValueTypes = {
+  chosenCity: string;
+  changeChosenCity: (city: string) => void;
+  changeCurrentWeatherIndex: (number: number) => void;
+  changeWeeklyWeather: (weeklyWeather: []) => void;
+  currentWeatherIndex: number;
+  weeklyWeather: any;
+};
+
+const initialValue: initialValueTypes = {
   chosenCity: "",
-  changeChosenCity: (city: string) => {},
-  changeCurrentWeatherIndex: (number: number) => {},
-  changeWeeklyWeather: (weeklyWeather: []) => {},
+  changeChosenCity: () => {},
+  changeCurrentWeatherIndex: () => {},
+  changeWeeklyWeather: () => {},
   currentWeatherIndex: 0,
   weeklyWeather: [],
 };
@@ -15,6 +24,8 @@ export function WeatherContextProvider({ children }: { children: ReactNode }) {
   const [chosenCity, setChosenCity] = useState("Tel Aviv");
   const [currentWeatherIndex, setCurrentWeatherIndex] = useState(0);
   const [weeklyWeather, setWeeklyWeather] = useState([]);
+
+  console.log(weeklyWeather);
 
   const changeCurrentWeatherIndex = (dayIndex: number) => {
     setCurrentWeatherIndex(dayIndex);
