@@ -1,6 +1,6 @@
 import { useGetWeatherData } from "../../utils/api/useGetWeatherData";
+import Forcast from "../Forcast/Forcast";
 import Card from "../card/Card";
-import Forcast from "../forcast/Forcast";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function MainInfo() {

@@ -20,7 +20,7 @@ function ForcastCard({ dayData, onClick, index }: any) {
   const { dayName, dayOfMonth, monthName } = getDates(currentDate);
 
   return (
-    <li
+    <div
       id={currentWeatherIndex === index ? `selected-forcast` : ""}
       className="forcast-card-list-item"
       onClick={onClick}
@@ -33,7 +33,7 @@ function ForcastCard({ dayData, onClick, index }: any) {
         <img src={iconsUrl} />
         <p>{Math.round(dayTemp)} °</p>
       </div>
-    </li>
+    </div>
   );
 }
 

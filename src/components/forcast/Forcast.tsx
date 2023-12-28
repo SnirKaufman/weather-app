@@ -1,28 +1,49 @@
-import ForcastCard from "../forcastCard/ForcastCard";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "./Forcast.scss";
-import { WeatherContext } from "../../context/WeatherContext";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 import { useContext } from "react";
+import { WeatherContext } from "../../context/WeatherContext";
+import ForcastCard from "../forcastCard/ForcastCard";
 
-function Forcast() {
+export default function Forcast() {
   const { weeklyWeather, changeCurrentWeatherIndex } =
     useContext(WeatherContext);
-
   return (
-    <ul className="forcast-container">
-      <div className="forcast-list-container">
-        {weeklyWeather.map((dayData, index) => {
-          return (
-            <ForcastCard
-              index={index}
-              onClick={() => changeCurrentWeatherIndex(index)}
-              key={index}
-              dayData={dayData}
-            />
-          );
-        })}
+    <>
+      <div className="forcast-container">
+        <Swiper
+          slidesPerView={2}
+          breakpoints={{
+            640: {
+              slidesPerView: 4,
+            },
+            1352: {
+              slidesPerView: 4,
+            },
+            1500: {
+              slidesPerView: 7,
+            },
+          }}
+          pagination={true}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {weeklyWeather.map((dayData, index) => {
+            return (
+              <SwiperSlide>
+                <ForcastCard
+                  index={index}
+                  onClick={() => changeCurrentWeatherIndex(index)}
+                  key={index}
+                  dayData={dayData}
+                />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
-    </ul>
+    </>
   );
 }
-
-export default Forcast;
