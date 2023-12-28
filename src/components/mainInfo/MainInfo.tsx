@@ -1,5 +1,5 @@
 import { useGetWeatherData } from "../../utils/api/useGetWeatherData";
-import Forcast from "../Forcast/Forcast";
+import Forcast from "../forcast/Forcast";
 import Card from "../card/Card";
 import CircularProgress from "@mui/material/CircularProgress";
 
